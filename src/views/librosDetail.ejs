@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include ("./partials/head") -%>
+<body>
+    <%- include ("./partials/header") -%>
+
+
+   <div class="container_detail_producto">
+    <div class="imagen_producto">
+        <img class="principal" src="/images/<%= libro.imagen %>">
+    </div>
+    <div class="titulo_detalle_producto">
+        <h1><%= libro.titulo %></h1>
+
+        <p class="detalle_producto">AUTOR: <%= libro.autor %></p>
+        <p class="detalle_producto">EDITORIAL: <%= libro.editorial %> </p>
+        <p class="detalle_producto">GENERO: <%= libro.genero.nombre %> </p> 
+        <p class="detalle_producto">PÁGINAS: <%= libro.paginas %> </p>
+        <p class="detalle_producto">STOCK: <%= libro.stock %> </p>
+        <p class="detalle_producto">PRECIO: <%= libro.precio %> </p>
+    </div>
+
+    <div class="botones_detail">
+        <a class="boton_agregar">Comprar</a> 
+        <a class="boton_modificar" href="/libros/edit/<%= libro.id %>">Modificar</a>
+        <a class="boton_borrar" href="/libros/delete/<%= libro.id %>">Borrar</a>
+        <a class="boton_volver" href="/libros">Listado de Libros</a>
+        
+
+    </div>
+
+
+        
+    </div> 
+    
+    <%- include ("./partials/footer") -%>
+</body>
+</html>

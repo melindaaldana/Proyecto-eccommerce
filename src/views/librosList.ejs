@@ -1,0 +1,36 @@
+<html lang="en">
+    <%- include ("./partials/head") -%>
+
+<body>
+    <%- include ("./partials/header") -%>
+    <h1 style="text-align: center; margin-top: 20px;">LISTADO DE LIBROS</h1>
+
+    <div>
+      <a class="boton" href="/libros/add">Agregar Libro</a>
+      <a class="boton" href="/">Inicio</a>
+    </div>
+
+    <main>
+        <div class="container_items">
+          <% for(let i = 0; i < libros.length; i++){ %>
+          <div class="item">
+            <a href="/libros/detail/<%= libros[i].id %>">
+              <figure>
+                <img src="/images/<%= libros[i].imagen %>" alt="<%= libros[i].titulo %>">
+              </figure>
+              <div class="info_producto">
+                <h3><%= libros[i].titulo %></h3>
+                <p class="price">$<%= libros[i].precio %></p>
+                <button>Añadir al carrito</button>
+              </div>
+            </a>
+          </div>
+          <% } %>
+        </div>
+      </main>
+      
+      <%- include ("./partials/footer") -%>
+</body>
+</html>
+
+
